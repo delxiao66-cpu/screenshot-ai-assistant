@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "截图 AI 助手",
+  "version": "1.0.0",
+  "minimum_chrome_version": "120",
+  "description": "通过私人后端分析当前可见网页截图，支持手动连续采集。",
+  "permissions": ["storage", "tabs", "alarms"],
+  "host_permissions": ["<all_urls>"],
+  "background": {"service_worker": "background.js"},
+  "action": {"default_popup": "popup.html", "default_icon": {"16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png"}},
+  "icons": {"16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png"},
+  "commands": {
+    "take-screenshot": {"suggested_key": {"default": "Ctrl+Shift+1", "mac": "MacCtrl+Shift+1"}, "description": "单张截图并分析"},
+    "batch-capture": {"suggested_key": {"default": "Ctrl+Shift+2", "mac": "MacCtrl+Shift+2"}, "description": "添加截图到多图任务"},
+    "analyze": {"suggested_key": {"default": "Ctrl+Shift+3", "mac": "MacCtrl+Shift+3"}, "description": "开始分析多图任务"}
+  }
+}

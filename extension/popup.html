@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><title>截图 AI 助手</title><link rel="stylesheet" href="popup.css"></head>
+<body>
+<h1>截图 AI 助手</h1>
+<label for="serverUrl">服务器地址</label>
+<input id="serverUrl" type="url" placeholder="https://hostname.tailnet-name.ts.net">
+<label for="username">账号</label><input id="username" autocomplete="username">
+<label for="password">密码</label><input id="password" type="password" autocomplete="current-password">
+<div class="row"><button id="save">保存并连接</button><button id="reconnect" class="secondary">重新连接</button></div>
+<p id="connection" role="status">正在读取连接状态…</p>
+<button id="quick">单张截图并分析</button>
+<p class="hint">快捷键：Ctrl+Shift+1 截图 · Ctrl+Shift+2 添加 · Ctrl+Shift+3 分析</p>
+<button id="batch_capture" class="secondary">添加截图到当前多图任务</button>
+<button id="analyze" class="secondary">开始当前多图任务分析</button>
+<p id="task">当前没有任务</p><p id="batch">已收集 0 张</p>
+<button id="open_controller" class="secondary">打开 Web 控制台</button>
+<p id="device" class="hint"></p><p id="error" role="alert"></p>
+<script src="popup.js"></script>
+</body></html>

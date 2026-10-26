@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>截图 AI 助手</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<main>
+<header><div><p class="eyebrow">看清上下文 · 一起分析</p><h1>截图 AI 助手</h1></div><button id="clear_token" class="quiet">退出登录</button></header>
+<section id="auth" class="card" hidden><h2>登录</h2><p>使用管理员或普通账户登录。</p><form id="auth_form"><label for="username">账号</label><input id="username" autocomplete="username" required><label for="password">密码</label><div class="actions"><input id="password" type="password" autocomplete="current-password" required><button>登录</button></div></form></section>
+<div id="workspace" hidden>
+<section id="admin_panel" class="card" hidden><div class="section_heading"><h2>账号管理</h2></div><form id="user_form" class="actions"><input id="new_username" placeholder="新账号" minlength="1" maxlength="64" required><input id="new_password" type="password" placeholder="初始密码（至少 10 个字符）" minlength="10" maxlength="256" required><button>创建普通账号</button></form><div id="user_list"></div></section>
+<div class="statusbar" role="status"><span id="agent_status">截图客户端：离线</span><span id="server_status">Server：连接中</span><span id="current_status">暂无任务</span></div>
+<section class="card quick"><div><h2>一张截图，直接分析</h2><p>通过在线客户端截图：Mac 截取所选显示器全屏，扩展截取当前网页。</p></div><button id="quick">单张截图并分析</button></section>
+<section class="card"><div class="section_heading"><div><h2>多图分析</h2><p>手动滚动网页后继续截图，或按顺序选择本地图片。</p></div><span id="count" class="count">已采集 0 / 20 张</span></div>
+<div class="actions"><button id="new_batch" class="secondary">新建多图任务</button><button id="capture" class="secondary">添加截图</button><button id="upload" class="secondary">上传本地图片</button><button id="analyze">开始分析</button><button id="clear_images" class="quiet">清空</button><button id="cancel" class="quiet">取消任务</button></div>
+<input id="files" type="file" accept="image/png,image/jpeg,image/webp" multiple hidden>
+<p id="collection_status" aria-live="polite">新建任务后即可添加图片。</p>
+<div id="thumbnails" class="thumbnails"></div>
+</section>
+<section class="card"><div class="section_heading"><h2>分析结果</h2><span id="result_status"></span></div><div id="result"><p class="muted">结果会在这里显示。</p></div></section>
+</div>
+<p id="error" role="alert"></p>
+<footer>只采集当前可见区域 · 多张图片按顺序综合分析</footer>
+</main><script src="/static/app.js"></script></body></html>

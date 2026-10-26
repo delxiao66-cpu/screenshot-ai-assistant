@@ -1,0 +1,1 @@
+"""Personal screenshot assistant."""
